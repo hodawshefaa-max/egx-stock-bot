@@ -1,11 +1,11 @@
 import requests
+import os
 import json
 import time
 from datetime import datetime
 
 # =================== CONFIG ===================
-TOKEN = "8779800260:AAG2j2yWHDpULU6_vNxzpVRPwlUy457xZkM"
-CHAT_ID = "5967309975"
+TOKEN = os.getenv('TELEGRAM_TOKEN', '8779800260:AAG2j2yWHDpOLU6_vNxzpVRPwlUy457xZkM')
 BASE_URL = f"https://api.telegram.org/bot{TOKEN}"
 STATE_FILE = "/tmp/forex_state.json"
 
