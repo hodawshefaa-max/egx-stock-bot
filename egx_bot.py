@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 
 # ===================== CONFIGURATION =====================
-TOKEN = "8779800260:AAG2j2yWHDpULU6_vNxzpVRPwlUy457xZkM"
+TOKEN = "8728052970:AAEUs3BOSvqSS_O2dvAVzVhvsO3vG3PqLxo"
 CHAT_ID = "5967309975"
 BASE_URL = f"https://api.telegram.org/bot{TOKEN}"
 
