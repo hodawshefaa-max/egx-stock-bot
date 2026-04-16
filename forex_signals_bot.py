@@ -7,6 +7,7 @@ from datetime import datetime
 # =================== CONFIG ===================
 TOKEN = os.getenv('TELEGRAM_TOKEN', '8779800260:AAG2j2yWHDpOLU6_vNxzpVRPwlUy457xZkM')
 BASE_URL = f"https://api.telegram.org/bot{TOKEN}"
+CHAT_ID = os.getenv('CHAT_ID', '5967309975')
 STATE_FILE = "/tmp/forex_state.json"
 
 # Pairs to monitor
