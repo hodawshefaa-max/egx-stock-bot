@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '*/5 * * * *'  # Every 5 minutes for scalping
   workflow_dispatch:
+    schedule:
+        - cron: '*/5 * * * *'  # Every 5 minutes for real-time scalping
 
 jobs:
   run-gold-scalping:
