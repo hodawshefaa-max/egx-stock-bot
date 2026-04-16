@@ -1,0 +1,31 @@
+name: Forex & Gold Signals Bot
+
+on:
+  schedule:
+    - cron: '0 6,9,12,15,18 * * 1-5'  # Every 3 hours on weekdays
+    - cron: '0 8,12,16 * * 6'         # Saturday (gold markets open)
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  analyze-and-signal:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install yfinance pandas numpy requests ta python-telegram-bot
+
+    - name: Run Forex & Gold Analysis Bot
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        python forex_gold_signals_bot.py
