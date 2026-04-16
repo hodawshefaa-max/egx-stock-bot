@@ -65,12 +65,12 @@ class GoldScalpingBot:
         """Fetch real-time gold data"""
         try:
             ticker = yf.Ticker('GC=F')  # Gold Futures
-            df = ticker.history(period='1d', interval=SCAMP_TIMEFRAME)
+            df = ticker.history(period='1d', interval=SCALP_TIMEFRAME)
             
             if df.empty or len(df) < 20:
                 # Fallback to XAU/USD
                 ticker = yf.Ticker('XAUUSD=X')
-                df = ticker.history(period='1d', interval=SCAMP_TIMEFRAME)
+                df = ticker.history(period='1d', interval=SCALP_TIMEFRAME)
             
             return df if not df.empty else None
         except:
