@@ -23,5 +23,5 @@ jobs:
       - name: Run Forex Signals Bot
         env:
           TELEGRAM_TOKEN: ${{ secrets.FOREX_TELEGRAM_TOKEN }}
-                    CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python                     forex_signals_bot.py
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python forex_signals_bot.py
