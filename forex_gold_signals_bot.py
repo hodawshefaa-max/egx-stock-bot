@@ -301,13 +301,11 @@ class ForexSignalBot:
         
         # === DECISION ===
         # Require minimum 5 conditions for high probability
-        if buy_conditions >= 5:
-            signal = 'BUY'
+        if buy_conditions >= min_conditions_required:            signal = 'BUY'
             confidence = min(100, 50 + (buy_conditions * 8))
             reasons = buy_reasons
-        elif sell_conditions >= 5:
-            signal = 'SELL'
-            confidence = min(100, 50 + (sell_conditions * 8))
+        elif sell_conditions >= min_conditions_required:                    # Lower threshold for Gold (XAUUSD) for more signals
+                                    signal = 'SELL'
             reasons = sell_reasons
         
         if signal is None or confidence < MIN_CONFIDENCE:
