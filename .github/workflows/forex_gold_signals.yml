@@ -2,10 +2,8 @@ name: Forex & Gold Signals Bot
 
 on:
   schedule:
-    - cron: '0 6,9,12,15,18 * * 1-5'  # Every 3 hours on weekdays
-    - cron: '0 8,12,16 * * 6'         # Saturday (gold markets open)
-  workflow_dispatch:  # Manual trigger
-
+    - cron: '0 * * * *'  # Every hour, 24/7    - cron: '0 8,12,16 * * 6'         # Saturday (gold markets open)
+  
 jobs:
   analyze-and-signal:
     runs-on: ubuntu-latest
