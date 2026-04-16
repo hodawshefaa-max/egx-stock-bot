@@ -25,7 +25,7 @@ jobs:
 
     - name: Run Forex & Gold Analysis Bot
       env:
-        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_TOKEN: ${{ secrets.FOREX_TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
         python forex_gold_signals_bot.py
